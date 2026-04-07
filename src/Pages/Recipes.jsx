@@ -1,22 +1,22 @@
 import React, { useContext } from 'react'
 import { recepiecontext } from '../context/RecipesContext'
+import RecipeCard from '../components/RecipeCard'
 
 function Recipes() {
   const { data } = useContext(recepiecontext)
 
-  const renderRecipie = () => {
-    return data.map(item => (
-      <div key={item.id}>
-        <h1>{item.title}</h1>
-      </div>
-    ))
-  }
-
+const renderRecipie = data.map((recipe) => (
+  <RecipeCard key={recipe.id} recipe={recipe} />
+))
+   
   return (
     <div>
-      {renderRecipie()}
+      {renderRecipie}
     </div>
   )
-}
+
+  }
+
+
 
 export default Recipes
