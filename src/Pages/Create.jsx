@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import  { useContext } from 'react'
+import { toast } from 'react-toastify'
 import { useForm  } from 'react-hook-form'
 import { recepiecontext } from '../context/RecipesContext';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +14,7 @@ function Create() {
         recepie.id = nanoid()
 
         setData([...data , recepie])
-        toast.sucess("New recipe created !")
+       toast.success("New recipe created !")
         reset()
         navigate("/recipes")
         console.log(recepie);

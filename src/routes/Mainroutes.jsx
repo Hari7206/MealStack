@@ -12,7 +12,7 @@ function Mainroutes() {
 <Route path="/" element={<Home/>} />
 <Route path="/about" element={<About/>} />
 <Route path="/recipes" element={<Recipes/>} />
-<Route path="/recipes/details:id" element={<SingleRecipe/>} />
+<Route path="/recipes/details/:id" element={<SingleRecipe/>} />
 <Route path="/create-recipes" element={<Create/>} />
     </Routes>
   )
