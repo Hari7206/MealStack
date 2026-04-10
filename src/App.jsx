@@ -4,7 +4,7 @@ import Nav from './components/Nav'
 
 function App() {
   return (
-    <div className='h-screen w-screen px-10 py-10 bg-gray-800 text-white'>
+    <div >
       <Mainroutes/>
       <Nav/>
     </div>
