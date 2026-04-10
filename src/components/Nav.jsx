@@ -28,6 +28,12 @@ function Nav() {
         >
            Create Recipes
         </NavLink>
+        <NavLink
+         className={(e)=> e.isActive && 'text-red-700 flex justify-center gap-10px text-[1.2rem]'}
+        to={"/create-recipes"}
+        >
+          favourite
+        </NavLink>
     </div>
   )
 }

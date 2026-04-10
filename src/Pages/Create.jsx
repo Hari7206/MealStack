@@ -13,7 +13,9 @@ function Create() {
     function onclick(recepie) {
         recepie.id = nanoid()
 
-        setData([...data , recepie])
+       let copyData = [...data]
+       copyData.push(recepie)
+       localStorage.setItem("recipes" , JSON.stringify(copyData))
        toast.success("New recipe created !")
         reset()
         navigate("/recipes")

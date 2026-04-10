@@ -4,7 +4,8 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { recepiecontext } from '../context/RecipesContext'
-// have to update this in this 
+
+
 function SingleRecipe() {
   const { data, setData } = useContext(recepiecontext)
     const params = useParams()
@@ -14,16 +15,18 @@ function SingleRecipe() {
   const navigate  = useNavigate()
   const { register, handleSubmit, reset } = useForm({
     defaultValues:{
-      title: recipe.title,
+      title: recipe?.title,
     }
   });
 
   function onclick(recipe) {
     let index = data.findIndex((item) => item.id === params.id)
     const copyData = [...data]
+
     copyData[index] = { ...copyData[index], ...recipe }
     toast.success(" recipe updated !")
     setData(copyData)
+    localStorage.setItem("recipes" , JSON.stringify(copyData))
 
 
   }
@@ -34,9 +37,28 @@ function SingleRecipe() {
 let deleteHandler = () => {
     const filterData = data.filter((item)=> item.id != params.id)
     setData(filterData)
+    localStorage.setItem("recipes" , JSON.stringify(filterData))
     toast.success("recipe deleted")
     navigate("/recipes")
 }
+
+
+const [favourite, setFavourite] = useState(JSON.parse(localStorage.getItem("fav")) || [])
+
+
+const favHandler = () =>{
+  let copyFav = [...favourite]
+  copyFav.push(recipe)
+  setFavourite(copyFav)
+  
+localStorage.setItem("fav" , JSON.stringify(favourite))
+}
+const unfavHandler = () => {
+   const filterFav = favourite.filter((f) => f.id != recipe?.id)
+   setFavourite(filterFav)
+   localStorage.setItem("fav" , JSON.stringify(filterFav))
+}
+
 
   return (
     <div className="w-full p-4">
@@ -62,6 +84,14 @@ let deleteHandler = () => {
         <h3 className="mt-3 font-semibold">Instructions:</h3>
         <p>{recipe.Instructions}</p>
       </div>
+
+   <div>
+  {favourite.favourite.find((f) => f.id == recipe?.id) ? (
+    <span onClick={unfavHandler}>💔 Unfavourite</span>
+  ) : (
+    <span onClick={favHandler}>❤️ Favourite</span>
+  )}
+</div>
       <form
         className='w-1/2 p-2'
         onSubmit={handleSubmit(onclick)}>
