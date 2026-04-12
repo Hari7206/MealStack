@@ -4,9 +4,9 @@ import Nav from './components/Nav'
 
 function App() {
   return (
-    <div >
-      <Mainroutes/>
-      <Nav/>
+    <div>
+      <Nav />
+      <Mainroutes />
     </div>
   )
 }
