@@ -25,7 +25,7 @@ function Fav() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
             <span className="inline-block bg-red-50 text-red-400 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-3">
-              ❤️ Your Favourites
+              <i className="ri-poker-hearts-fill"></i> Your Favourites
             </span>
             <h1
               className="text-4xl md:text-5xl font-black text-[#1A1A1A]"
@@ -42,7 +42,7 @@ function Fav() {
               onClick={removeAll}
               className="self-start md:self-auto text-sm font-bold text-red-400 border border-red-200 px-5 py-2.5 rounded-full hover:bg-red-50 transition-all"
             >
-              🗑️ Clear All
+              <i class="ri-delete-bin-line"></i> Clear All
             </button>
           )}
         </div>
@@ -50,7 +50,7 @@ function Fav() {
         {/* Empty state */}
         {favourites.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-32 text-center">
-            <div className="text-7xl mb-6 animate-bounce">💔</div>
+            <div className="text-7xl mb-6 animate-bounce"><i className="ri-emotion-unhappy-line text-red-700"></i></div>
             <h2
               className="text-2xl font-black text-[#1A1A1A] mb-2"
               style={{ fontFamily: "'Playfair Display', serif" }}

@@ -4,7 +4,7 @@ import { recepiecontext } from '../context/RecipesContext'
 import RecipeCard from '../components/RecipeCard'
 
 const CATEGORIES = ['all', 'breakfast', 'lunch', 'dinner', 'desserts', 'drinks', 'snacks']
-const CAT_EMOJI   = { all:'🍽️', breakfast:'🥞', lunch:'🥗', dinner:'🍲', desserts:'🍰', drinks:'🍹', snacks:'🥨' }
+const CAT_EMOJI   = { all:'', breakfast:'', lunch:'', dinner:'', desserts:'', drinks:'', snacks:'' }
 
 function Recipes() {
   const { data } = useContext(recepiecontext)
@@ -33,7 +33,7 @@ function Recipes() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <span className="inline-block bg-[#E85D26]/10 text-[#E85D26] text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-3">
-              🍴 All Recipes
+               All Recipes
             </span>
             <h1
               className="text-4xl md:text-5xl font-black text-[#1A1A1A]"
@@ -53,7 +53,7 @@ function Recipes() {
 
         {/* Search */}
         <div className="relative mb-6">
-          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#C4A88A] text-lg">🔍</span>
+          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#C4A88A] text-lg"><i class="ri-search-line"></i></span>
           <input
             type="text"
             value={search}

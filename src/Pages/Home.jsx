@@ -24,9 +24,9 @@ const STEPS = [
 ]
 
 const EDITORIAL = [
-  { tag: '🍛 Most Loved',  heading: 'Bold flavours,\nsimple steps.', body: 'Our hand-picked recipes walk you through every step — from mise en place to the final garnish. No culinary school required.', cta: 'Browse Recipes', ctaTo: '/recipes',        img: 'https://i.pinimg.com/1200x/f3/2f/f6/f32ff620b26ca36f7a8546a1d4fe9cdc.jpg', bg: '#FFF8F3', imgLeft: false, badge1: { icon: '⭐', text: '4.9 Rating' },      badge2: { icon: '⏱', text: '45 min' } },
-  { tag: '✏️ Your Kitchen', heading: 'Your recipe,\nyour rules.',    body: "Got a dish that runs in the family? Write it down, add photos, pick a category — and share it with cooks everywhere. It's your personal cookbook, online.", cta: 'Start Creating', ctaTo: '/create-recipes', img: 'https://i.pinimg.com/1200x/80/98/10/809810b02c3682cd3f4937835f664660.jpg', bg: '#F3FBF5', imgLeft: true,  badge1: { icon: '🧑‍🍳', text: 'Your Recipe' }, badge2: { icon: '❤️', text: 'Community Loved' } },
-  { tag: '❤️ Favourites',   heading: 'Save the ones\nyou love.',     body: 'Found a recipe you want to come back to? One tap saves it to your personal favourites — so your go-to dishes are always just a click away.',            cta: 'View Favourites', ctaTo: '/Fav',            img: 'https://i.pinimg.com/736x/10/2e/72/102e724d8f94c7825ccdab3ea4efebea.jpg',   bg: '#FFF3F0', imgLeft: false, badge1: { icon: '🔖', text: 'Saved' },          badge2: { icon: '🌟', text: 'Top Pick' } },
+  { tag: ' Most Loved',  heading: 'Bold flavours,\nsimple steps.', body: 'Our hand-picked recipes walk you through every step — from mise en place to the final garnish. No culinary school required.', cta: 'Browse Recipes', ctaTo: '/recipes',        img: 'https://i.pinimg.com/1200x/f3/2f/f6/f32ff620b26ca36f7a8546a1d4fe9cdc.jpg', bg: '#FFF8F3', imgLeft: false, badge1: { icon: <i className="ri-star-fill text-yellow-600"></i>, text: '4.9 Rating' },      badge2: { icon: '⏱', text: '45 min' } },
+  { tag: '✏️ Your Kitchen', heading: 'Your recipe,\nyour rules.',    body: "Got a dish that runs in the family? Write it down, add photos, pick a category — and share it with cooks everywhere. It's your personal cookbook, online.", cta: 'Start Creating', ctaTo: '/create-recipes', img: 'https://i.pinimg.com/1200x/80/98/10/809810b02c3682cd3f4937835f664660.jpg', bg: '#F3FBF5', imgLeft: true,  badge1: { icon: <i className="ri-book-open-line"></i>, text: 'Your Recipe' }, badge2: { icon: <i className="ri-p2p-line"></i>, text: 'Community Loved' } },
+  { tag: '❤️ Favourites',   heading: 'Save the ones\nyou love.',     body: 'Found a recipe you want to come back to? One tap saves it to your personal favourites — so your go-to dishes are always just a click away.',            cta: 'View Favourites', ctaTo: '/Fav',            img: 'https://i.pinimg.com/736x/10/2e/72/102e724d8f94c7825ccdab3ea4efebea.jpg',   bg: '#FFF3F0', imgLeft: false, badge1: { icon: <i className="fa-solid fa-floppy-disk"></i>, text: 'Saved' },          badge2: { icon: <i className="ri-align-top"></i>, text: 'Top Pick' } },
 ]
 
 /* ── Animate on scroll hook ── */
@@ -169,8 +169,8 @@ function Home() {
         <div className="flex gap-12 whitespace-nowrap text-white font-bold text-sm uppercase tracking-widest" style={{ animation: 'marquee 18s linear infinite', width: 'max-content' }}>
           {[...Array(3)].map((_, gi) => (
             <span key={gi} className="flex gap-12">
-              {['🍛 Butter Chicken', '🍝 Carbonara', '🍕 Pizza', '🍔 Burgers', '🍰 Desserts', '🥗 Salads', '🍜 Noodles', '🥞 Pancakes', '🍹 Smoothies', '🥨 Snacks'].map((t) => (
-                <span key={t} className="flex items-center gap-3">{t} <span className="text-white/40">·</span></span>
+              {[' Butter Chicken', ' Carbonara', ' Pizza', ' Burgers', ' Desserts', ' Salads', ' Noodles', ' Pancakes', ' Smoothies', ' Snacks'].map((t) => (
+                <span key={t} className="flex items-center gap-3"> <span className="text-white/40">·</span>{t} <span className="text-white/40">·</span></span>
               ))}
             </span>
           ))}
@@ -306,7 +306,8 @@ function Home() {
             <div className="grid md:grid-cols-3 gap-10">
               {STEPS.map((step, i) => (
                 <Reveal key={step.title} delay={i * 120}>
-                  <div className="flex flex-col items-center text-center group">
+                  <div className="flex flex-col items-center text-center group   "
+                  >
                     {/* icon box */}
                     <div className="relative mb-6">
                       <div
@@ -466,11 +467,7 @@ function Home() {
             "Cooking is at once child's play and adult joy. And cooking done with care is an act of love."
             <span className="text-[#E85D26] font-semibold not-italic ml-2">— Craig Claiborne</span>
           </p>
-          <div className="flex gap-2">
-            {['🍕', '🍜', '🍰', '🥗', '🍛'].map((e) => (
-              <span key={e} className="text-xl opacity-60">{e}</span>
-            ))}
-          </div>
+        
         </div>
 
         {/* Bottom bar */}

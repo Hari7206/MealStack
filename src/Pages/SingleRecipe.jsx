@@ -5,12 +5,12 @@ import { toast } from 'react-toastify'
 import { recepiecontext } from '../context/RecipesContext'
 
 const CATEGORIES = [
-  { value: 'breakfast', label: '🥞 Breakfast' },
-  { value: 'lunch',     label: '🥗 Lunch' },
-  { value: 'dinner',    label: '🍲 Dinner' },
-  { value: 'desserts',  label: '🍰 Desserts' },
-  { value: 'drinks',    label: '🍹 Drinks' },
-  { value: 'snacks',    label: '🥨 Snacks' },
+  { value: 'breakfast', label: ' Breakfast' },
+  { value: 'lunch',     label: ' Lunch' },
+  { value: 'dinner',    label: ' Dinner' },
+  { value: 'desserts',  label: ' Desserts' },
+  { value: 'drinks',    label: ' Drinks' },
+  { value: 'snacks',    label: ' Snacks' },
 ]
 
 const CAT_STYLE = {
@@ -194,26 +194,26 @@ function SingleRecipe() {
                     : 'bg-[#FFF0E0] text-[#E85D26] border border-[#F5D5BE] hover:bg-[#FFE4CC]'
                 }`}
               >
-                {isFav ? '💔 Remove Favourite' : '❤️ Add to Favourites'}
+                {isFav ? <i className="fa-regular fa-heart"></i>: <i className="fa-solid fa-heart"></i>}
               </button>
               <button
                 onClick={() => setEditOpen(!editOpen)}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-[#F5F5F0] text-[#3D2B1F] border border-[#EDE0D4] hover:border-[#E85D26] hover:text-[#E85D26] transition-all duration-300"
               >
-                ✏️ {editOpen ? 'Close Edit' : 'Edit Recipe'}
+                <i className="fa-solid fa-pen-to-square"></i>{editOpen ? 'Close Edit' : 'Edit Recipe'}
               </button>
               <button
                 onClick={deleteHandler}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold bg-red-50 text-red-500 border border-red-200 hover:bg-red-100 transition-all duration-300"
               >
-                🗑️ Delete
+                <i class="ri-delete-bin-line"></i> Delete
               </button>
             </div>
           </div>
         </div>
 
         {/* Ingredients */}
-        <Section title="🧄 Ingredients">
+        <Section title=" Ingredients">
           <ul className="space-y-2">
             {ingredientLines.map((line, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-[#3D2B1F]">
@@ -230,7 +230,7 @@ function SingleRecipe() {
         </Section>
 
         {/* Instructions */}
-        <Section title="👨‍🍳 Instructions">
+        <Section title=" Instructions">
           <ol className="space-y-4">
             {instructionLines.map((step, i) => {
               const clean = step.replace(/^\d+\.\s*/, '')

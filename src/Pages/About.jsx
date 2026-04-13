@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const TEAM = [
-  { initials: 'AK', name: 'Aryan Kumar', role: 'Founder & Head Chef',  bg: '#FFE8D0', color: '#E85D26' },
-  { initials: 'SM', name: 'Sara Mehta',  role: 'Recipe Curator',        bg: '#DCF0DC', color: '#5A8A3C' },
-  { initials: 'RJ', name: 'Raj Joshi',   role: 'Food Photographer',     bg: '#EDE0FF', color: '#7C3AED' },
+  { initials: '', name: 'Hari Thapa', role: 'Founder & Head Chef',  bg: 'https://i.pinimg.com/736x/36/33/08/363308e210df50557193251f12b3b1ae.jpg', color: '#E85D26' },
+  { initials: '', name: 'Mital Mehta',  role: 'Recipe Curator',        bg: 'https://i.pinimg.com/736x/9f/9b/13/9f9b13db6e1a7add576ad0ea85dbecc3.jpg', color: '#5A8A3C' },
+  { initials: '', name: 'Lina Sherstha',   role: 'Food Photographer',     bg: 'https://i.pinimg.com/1200x/af/0a/98/af0a98fc8b0538948d75b77fe0d2ce29.jpg', color: '#7C3AED' },
 ]
 
 const VALUES = [
@@ -24,7 +24,7 @@ function About() {
 
       {/* ── HERO — full bleed editorial ── */}
       <section className="pt-32 pb-0 px-8 md:px-16 max-w-7xl mx-auto">
-        <span className="text-xs font-bold text-[#9A8F83] uppercase tracking-widest">🍴 Our Story</span>
+        <span className="text-xs font-bold text-[#9A8F83] uppercase tracking-widest"> Our Story</span>
 
         <div className="mt-4 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-[#E8E2D9]">
           <h1
@@ -51,14 +51,13 @@ function About() {
       {/* ── IMAGE PLACEHOLDER — full bleed ── */}
       <section className="px-8 md:px-16 max-w-7xl mx-auto py-12">
         <div
-          className="w-full h-72 md:h-[460px] rounded-3xl flex items-center justify-center relative overflow-hidden"
-          style={{ background: '#EDE8E0' }}
+          className="w-full h-72 md:h-[460px] rounded-3xl flex items-center justify-center relative overflow-hidden bg-cover bg-center"
+          style={{
+    backgroundImage:
+      "url('https://i.pinimg.com/1200x/89/74/5f/89745f074f6dcf3e17a72be383eb7d8e.jpg')",
+  }}
         >
-          <div className="text-center space-y-2 text-[#BDB5A8]">
-            <div className="text-6xl">📸</div>
-            <p className="text-sm font-semibold">Your hero image goes here</p>
-            <p className="text-xs">Recommended: 1400×600px landscape</p>
-          </div>
+    
           {/* corner label like "Your Journey" in reference */}
           <span className="absolute top-5 right-5 bg-white text-[#1A1A1A] text-xs font-black px-4 py-2 rounded-full shadow-md">
             Since 2024
@@ -151,8 +150,8 @@ function About() {
             >
               {/* Photo placeholder */}
               <div
-                className="h-52 flex items-center justify-center relative"
-                style={{ background: member.bg }}
+                className="h-52 flex items-center justify-center relative bg-cover bg-center"
+                style={{  backgroundImage: `url(${member.bg})`}}
               >
                 <span
                   className="text-5xl font-black"

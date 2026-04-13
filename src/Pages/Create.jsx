@@ -72,7 +72,7 @@ function Create() {
       {/* ── Top label bar — like "Plan Trip" in reference ── */}
       <div className="pt-28 pb-0 px-8 md:px-16 max-w-7xl mx-auto">
         <span className="text-xs font-bold text-[#9A8F83] uppercase tracking-widest">
-          🍴 Share Your Recipe
+          <i className="ri-lightbulb-ai-line"></i> Share Your Recipe
         </span>
       </div>
 
@@ -218,28 +218,38 @@ function Create() {
 
           {/* Image placeholder */}
           <div
-            className="w-full h-64 rounded-2xl overflow-hidden relative flex items-center justify-center"
-            style={{ background: '#EDE8E0' }}
-          >
-            <div className="text-center text-[#BDB5A8] space-y-2">
-              <div className="text-5xl">📸</div>
-              <p className="text-xs font-semibold">Recipe image preview</p>
-              <p className="text-xs">Paste a URL in the form to see it here</p>
-            </div>
-            <span className="absolute top-3 right-3 bg-white text-[#1A1A1A] text-xs font-bold px-3 py-1.5 rounded-full shadow">
-              Your Dish
-            </span>
-          </div>
+  className="w-full h-64 rounded-2xl overflow-hidden relative flex items-center justify-center bg-cover bg-center"
+  style={{
+    backgroundImage:
+      "url('https://i.pinimg.com/736x/84/46/8a/84468ad1089188082cea512a21f8142e.jpg')",
+  }}
+>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/60"></div>
+
+  {/* Content */}
+  <div className="relative text-center text-white space-y-2">
+    <p className="text-xs font-semibold">Recipe image preview</p>
+    <p className="text-xs opacity-80">
+      Paste a URL in the form to see it here
+    </p>
+  </div>
+
+  {/* Badge */}
+  <span className="absolute top-3 right-3 bg-white text-[#1A1A1A] text-xs font-bold px-3 py-1.5 rounded-full shadow">
+    Your Dish
+  </span>
+</div>
 
           {/* Tips panel */}
           <div className="rounded-2xl border border-[#E8E2D9] bg-white p-6 space-y-4">
             <h3 className="text-sm font-black text-[#1A1A1A] uppercase tracking-widest">Tips for a great recipe</h3>
             <div className="space-y-3">
               {[
-                { icon: '📏', tip: 'Use precise measurements — cups, grams, tablespoons.' },
-                { icon: '🔢', tip: 'Number each instruction step clearly.' },
-                { icon: '🌶️', tip: 'Mention spice level, dietary tags, or allergens.' },
-                { icon: '⏱', tip: 'Include prep time and cook time separately if possible.' },
+                { icon: '>', tip: 'Use precise measurements — cups, grams, tablespoons.' },
+                { icon: '>', tip: 'Number each instruction step clearly.' },
+                { icon: '>', tip: 'Mention spice level, dietary tags, or allergens.' },
+                { icon: '>', tip: 'Include prep time and cook time separately if possible.' },
               ].map((t) => (
                 <div key={t.tip} className="flex items-start gap-3">
                   <span className="text-lg flex-shrink-0 mt-0.5">{t.icon}</span>
@@ -252,9 +262,9 @@ function Create() {
           {/* Contact-style info blocks like the reference */}
           <div className="grid grid-cols-3 gap-3">
             {[
-              { icon: '🍽️', label: 'Free to Share', sub: 'Always' },
-              { icon: '⚡', label: 'Live Instantly', sub: 'No waiting' },
-              { icon: '❤️', label: 'Community', sub: 'Loved by all' },
+              { icon: <i class="ri-share-forward-fill"></i>, label: 'Free to Share', sub: 'Always' },
+              { icon: <i class="ri-live-fill"></i>, label: 'Live Instantly', sub: 'No waiting' },
+              { icon: <i class="ri-team-fill"></i>, label: 'Community', sub: 'Loved by all' },
             ].map((b) => (
               <div key={b.label} className="rounded-2xl border border-[#E8E2D9] bg-white p-4 text-center space-y-1">
                 <div className="text-2xl">{b.icon}</div>
