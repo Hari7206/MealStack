@@ -77,7 +77,7 @@ function PageNotFound() {
           <span>Taking you home in {count}s…</span>
         </div>
 
-        {/* Buttons */}
+        {/* Buttonss */}
         <div className="flex justify-center gap-4 flex-wrap">
           <Link
             to="/"
